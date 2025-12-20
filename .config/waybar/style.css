@@ -1,0 +1,132 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  font-family: "iA Writer Mono S";
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent;
+}
+.modules-left {
+  background: transparent;
+  border-radius: 5px;
+}
+.modules-center {
+  background: transparent;
+  border-radius: 5px;
+}
+.modules-right {
+  background: transparent;
+  border-radius: 5px;
+}
+#clock {
+  color: @blue;
+  margin-right: 5px;
+  background: transparent;
+  padding: 0 5px;
+  border: none;
+  border-radius: 2px;
+}
+#custom-screenrecording-indicator {
+  color: @teal;
+  margin: 0 2px;
+  padding: 0 3px;
+}
+#custom-screenrecording-indicator.active {
+  color: @red;
+}
+#custom-powerprofiles {
+  margin-left: -5px;
+  margin-right: 5px;
+}
+#custom-powerprofiles.powersaver {
+  color: @green;
+}
+#custom-powerprofiles.balanced {
+  color: @yellow;
+}
+#custom-powerprofiles.performance {
+  color: @maroon;
+}
+#custom-omarchy {
+  font-size: 20px;
+  color: @sapphire;
+  margin: 0 10px;
+}
+#custom-update {
+  font-size: 16px;
+  color: @sapphire;
+}
+
+#waybar {
+  background:#292C35 ;
+}
+window#waybar {
+  color: @text;
+}
+
+#workspaces {
+  transition: all 500ms ease-in-out;
+}
+#workspaces button {
+  transition: all 200ms ease-in-out;
+  padding: 0 2px;
+  background: @lavender;
+  margin: 0 2px;
+  color: black;
+  min-width: 25px;
+}
+#workspaces button.active {
+  min-width: 50px;
+  background: @blue;
+  color: black;
+}
+#cpu,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#custom-brightness,
+#custom-systemmenu,
+#tray {
+  margin: 0 8.5px;
+  min-width: 12px;
+}
+#tray {
+  color: white;
+}
+#custom-brightness {
+  margin: 0 12px;
+  color: @yellow;
+}
+#bluetooth {
+  margin: 0 10px;
+  color: @blue;
+  font-size: 18px;
+}
+#network {
+  margin-right: 15px;
+  color: @green;
+}
+#pulseaudio {
+  color: @blue;
+}
+#cpu {
+  color: @peach;
+}
+#battery {
+  color: @blue;
+  margin-right: 15px;
+}
+#battery.charging {
+  color: @green;
+}
+#battery.warning {
+  color: @pach;
+}
+#battery.critical {
+  color: red;
+}
+#custom-systemmenu {
+  margin-right: 15px;
+  color: @red;
+}

@@ -1,0 +1,160 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 26,
+  "modules-center": ["custom/omarchy", "hyprland/workspaces"],
+  "modules-left": [
+    "clock",
+    "custom/update",
+    "custom/screenrecording-indicator",
+    "custom/powerprofiles",
+    "mpris",
+  ],
+  "modules-right": [
+    "custom/brightness",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "cpu",
+    "battery",
+    "custom/systemmenu",
+    "group/tray-expander",
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 1,
+    },
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+  },
+
+  "mpris": {
+    "player": "playerctld",
+    "format": "{title}",
+    "format-paused": "{title}",
+    "format-stopped": "No media",
+    "max-length": 30,
+    "interval": 1,
+  },
+  "custom/brightness": {
+    "exec": "~/.config/waybar/my-scripts/bright.sh",
+    "on-click": "~/.config/waybar/my-scripts/bright.sh up",
+    "on-click-right": "~/.config/waybar/my-scripts/bright.sh down",
+    "return-type": "text",
+    "interval": 2,
+    "format": "󰃠 {}",
+  },
+
+  "custom/omarchy": {
+    "format": " ",
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space",
+  },
+
+  "custom/update": {
+    "format": " ",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600,
+  },
+  "clock": {
+    "format": "{:L%A %H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip": false,
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛 ",
+    //"on-click": "omarchy-launch-or-focus-tui btop"
+    "on-click": "exec kitty -e btop",
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth",
+  },
+
+  "custom/screenrecording-indicator": {
+    "on-click": "omarchy-cmd-screenrecord",
+    "exec": "~/.config/waybar/my-scripts/screenrecoding-indicator.sh",
+    "signal": 8,
+    "return-type": "json",
+    "format": "{text} ",
+    "format-empty": " ",
+  },
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "omarchy-launch-wifi",
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+    "tooltip": true,
+  },
+
+  "custom/powerprofiles": {
+    "exec": "~/.config/waybar/my-scripts/power-profile.sh",
+    "interval": 3,
+    "on-click": "omarchy-menu power",
+    "return-type": "json",
+  },
+  "custom/systemmenu": {
+    "format": "", // Power icon
+    "tooltip": "System Menu",
+    "on-click": "omarchy-menu system",
+    "interval": 0,
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item",
+    },
+    "modules": ["custom/expand-icon", "tray"],
+  },
+
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 20,
+  },
+}

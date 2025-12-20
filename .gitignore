@@ -1,0 +1,7 @@
+.cache/
+**/cache/
+*.log
+.env
+*.key
+*.pem
+*.crt

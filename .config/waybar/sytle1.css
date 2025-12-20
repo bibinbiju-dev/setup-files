@@ -1,0 +1,171 @@
+* {
+  border: none;
+  border-radius: 2px;
+  font-family: "iA Writer Mono S";
+  font-size: 16px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+#custom-omarchy {
+  font-size: 20px; /* makes it big */
+  color: #0089d4;
+  font-weight: bold;
+  min-width: 50px;
+}
+.modules-left {
+  margin-left: 8px;
+  background: #010101;
+  border-radius: 100px;
+  padding: 5px 5px;
+  margin-top: 2px;
+}
+.modules-right {
+  margin-right: 8px;
+  background: #010101;
+  padding: 0 5px;
+  border-radius: 100px;
+  margin-top: 2px;
+}
+.modules-center {
+  background-color: #010101;
+  border-radius: 100px;
+  padding: 0 5px;
+  margin-top: 2px;
+}
+#custom-update {
+  font-size: 14px;
+  color: #ff15cc;
+  margin-left: 8.75px;
+}
+
+#cpu,
+#pulseaudio,
+#bluetooth,
+#network {
+  min-width: 12px;
+  margin: 0 8.5px;
+
+  color: #eceff4;
+  font-size: 15px;
+}
+#bluetooth {
+  font-size: 18px;
+}
+window#waybar {
+  background: transparent;
+  color: white;
+}
+
+#workspaces {
+  transition: all 500ms ease-in-out;
+}
+#workspaces button {
+  transition: all 200ms ease-in-out;
+  padding: 0 5px;
+  background: transparent;
+  color: #e8eaed;
+  margin: 0 3px;
+}
+
+#workspaces button.active {
+  min-width: 100px;
+  background: #29c0f7;
+  color: #121212;
+  border-radius: 30px;
+}
+
+#clock {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 2px;
+  margin-left: 4px;
+}
+
+#battery {
+  color: white;
+
+  margin-right: 10px;
+  font-size: 16px;
+}
+#battery.charging {
+  color: #11ff66;
+}
+
+#custom-screenrecording-indicator {
+  font-size: 16px;
+  min-width: 12px;
+  margin-left: 8.75px;
+  color: #eceff4; /* idle grey */
+}
+
+#custom-screenrecording-indicator.active {
+  color: #ebcb8b; /* red when recording */
+}
+
+#custom-brightness {
+  padding: 0 8px;
+  font-size: 15px;
+  color: #ffdd55;
+}
+
+/* === POWER PROFILES MODULE === */
+#custom-powerprofiles {
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+/* Performance mode — Red + larger icon */
+#custom-powerprofiles.performance {
+  color: #ff4d4d; /* red */
+  font-size: 18px;
+}
+
+/* Balanced mode — Yellowish */
+#custom-powerprofiles.balanced {
+  color: #f1c40f; /* gold */
+  font-size: 17px;
+}
+
+/* Power-Saver mode — Green + slightly smaller */
+#custom-powerprofiles.powersaver {
+  color: #27ae60; /* green */
+  font-size: 16px;
+}
+
+#custom-systemmenu {
+  padding: 0 10px;
+  font-size: 18px;
+  color: #ff5555; /* red power color */
+}
+
+#custom-systemmenu:hover {
+  color: #ff7878;
+}
+
+#mpris {
+  padding: 0px 5px;
+  border-radius: 6px;
+  margin: 0 5px;
+  transition: background-color 0.2s ease;
+}
+
+#mpris.playing {
+  background-color: #4abaaf;
+  color: #1e1e2e;
+}
+
+#mpris.paused {
+  background-color: #f9e2af;
+  color: #1e1e2e;
+}
+
+#mpris.stopped {
+  background-color: #45475a;
+  color: #cdd6f4;
+}
+#tray {
+  color: red;
+  margin-right: 2px;
+  padding: 0 5px;
+}
